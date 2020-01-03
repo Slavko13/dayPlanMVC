@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/login", "/registration").anonymous()
-                .antMatchers("/clients", "/tags", "/js/**").authenticated()
+                .antMatchers("/id","/tasks", "/clients", "/tags", "/js/**").authenticated()
                 .and().csrf().disable()
                 .formLogin()
                 .loginPage("/login")

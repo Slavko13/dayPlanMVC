@@ -6,6 +6,7 @@ import org.hibernate.annotations.GeneratorType;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -24,6 +25,10 @@ public class Client {
     private String email;
     private Integer age;
     private String fileName;
+
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    private List<Tasks> tasksList = new ArrayList<>();
 
 
     public String getFileName() {

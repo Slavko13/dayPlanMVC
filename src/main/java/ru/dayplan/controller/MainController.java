@@ -72,8 +72,11 @@ public class MainController {
 
     @GetMapping("/tags")
     public String viewTags(Model model, @AuthenticationPrincipal Client activeClient) {
+        if (activeClient != null) {
+            model.addAttribute("id", activeClient.getId());
+            model.addAttribute("name", activeClient.getFirst_name());
+        }
         Client client = clientService.findClientByLogin(activeClient.getLogin());
-        model.addAttribute("UserLogin", client.getLogin());
         model.addAttribute("HomesTags", clientService.getHomesByClientsLogin(client.getLogin()));
         return "tagsView";
     }

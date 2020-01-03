@@ -5,7 +5,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import ru.dayplan.entity.Client;
 import ru.dayplan.entity.Home;
+import ru.dayplan.entity.Tasks;
 
+import java.util.List;
 import java.util.Set;
 
 public interface ClientsService {
@@ -17,4 +19,5 @@ public interface ClientsService {
      void updateClient(Client client);
      Client findClientByEmail(String email);
      Client findClientById(Integer id);
+     List<Tasks> findTasksByClientsLogin(String login);
 }

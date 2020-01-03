@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
-<body>
-<h3>FreeMarker View</h3>
-    Hello
+<#include "includers/main_template.ftlh">
 
+<#macro content>
 <form method="post" action="/registration">
 
 
@@ -64,5 +57,6 @@
 </form>
 
 
-</body>
-</html>
+</#macro>
+
+<@main title="registration"/>

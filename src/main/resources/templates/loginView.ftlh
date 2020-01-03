@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
+<#include "includers/main_template.ftlh">
 
-<body>
+<#macro content>
 <form method="post" action="/login/process">
 
     <div>
@@ -58,6 +54,6 @@
         return false;
     })
 </script>
+</#macro>
 
-</body>
-</html>
+<@main title="login page"/>

@@ -2,13 +2,15 @@
 
 
 <#macro content>
-<h1>Welcome!</h1>
-<#if id == 0  >
-<p>Click <a href="/login">here</a> to login.</p>
-</#if>
-<#if id != 0  >
-    <p >${name} Click <a href="/id${id}"> here </a> to go to ur profile </p>
-</#if>
+    <p>Доброго времени суток приложение работает пока в очень начальном уровне тестирования</p>
+    <p>Суть его в том, чтобы спланировать день пользователю с учетом транспорта</p>
+    <#if id == 0  >
+    <p>Нажмите <a href="/login">Здесь</a> чтобы зайти или зарегистрироваться.</p>
+    </#if>
+    <#if id != 0  >
+
+    <p >${name} Нажмите <a href="/id${id}"> тут </a> чтобы посмотреть ваш профиль </p>
+    </#if>
 </#macro>
 
 <@main title="home page"/>

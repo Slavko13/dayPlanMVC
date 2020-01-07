@@ -46,6 +46,7 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String viewClients(Model model) {
+        model.addAttribute("isAuth", false);
         model.addAttribute("errorCounter", 0);
     return "registrationView";
     }
@@ -59,6 +60,15 @@ public class RegistrationController {
         client.setPassword(passwordEncoder.encode(password));
         clientService.updateClient(client);
         return "redirect:/login";
+    }
+
+    @GetMapping("/login")
+    public String loginError(@RequestParam(name = "error", required = false) Boolean error, Model model) {
+        if (Boolean.TRUE.equals(error)) {
+            model.addAttribute("error", true);
+        }
+        model.addAttribute("isAuth", false);
+        return "loginView";
     }
 
 

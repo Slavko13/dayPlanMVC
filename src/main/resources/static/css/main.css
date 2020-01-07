@@ -4,3 +4,9 @@ div {
 div input {
     display:block;
 }
+
+#header-flex {
+    display: flex;
+    justify-content: space-between;
+
+}

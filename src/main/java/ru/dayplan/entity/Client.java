@@ -5,7 +5,6 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -21,6 +20,7 @@ public class Client {
     private String first_name;
     private String second_name;
     private String password;
+    private String logInTime;
     @Email
     private String email;
     private Integer age;
@@ -108,4 +108,13 @@ public class Client {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getLogInTime() {
+        return logInTime;
+    }
+
+    public void setLogInTime(String logInTime) {
+        this.logInTime = logInTime;
+    }
+
 }

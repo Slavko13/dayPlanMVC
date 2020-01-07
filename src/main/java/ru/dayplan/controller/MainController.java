@@ -39,11 +39,13 @@ public class MainController {
     @GetMapping({"/home", "/"})
     public String viewHome(Model model, @AuthenticationPrincipal Client activeClient) {
         if (activeClient != null) {
+            model.addAttribute("isAuth", true);
             model.addAttribute("id", activeClient.getId());
             model.addAttribute("name", activeClient.getFirst_name());
         }
         else {
             model.addAttribute("id", 0);
+            model.addAttribute("isAuth", false);
         }
 
         return "homePageView";
@@ -54,6 +56,7 @@ public class MainController {
         ModelAndView clientsView = new ModelAndView("clientsView");
         Client client = clientService.findClientById(id);
         clientsView.addObject("client", client);
+        clientsView.addObject("isAuth", true);
         return clientsView;
     }
 

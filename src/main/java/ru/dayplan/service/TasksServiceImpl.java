@@ -20,15 +20,20 @@ public class TasksServiceImpl implements TasksService {
     private ClientsService clientsService;
 
     @Override
-    public void addTask(Tasks task) {
+    public boolean addTask(Tasks task) {
         tasksRepository.save(task);
+        return true;
     }
 
 
     @Override
-    public void deleteTask(Integer id) {
+    public boolean deleteTask(Integer id) {
         Tasks task = findTaskById(id);
-        tasksRepository.delete(task);
+        if (task != null) {
+            tasksRepository.delete(task);
+            return true;
+        }
+        return false;
     }
 
     @Override

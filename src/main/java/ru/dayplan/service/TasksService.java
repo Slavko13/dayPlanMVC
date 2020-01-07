@@ -4,8 +4,8 @@ import org.springframework.scheduling.config.Task;
 import ru.dayplan.entity.Tasks;
 
 public interface TasksService  {
-    void addTask(Tasks tasks);
-    void deleteTask(Integer id);
+    boolean addTask(Tasks tasks);
+    boolean deleteTask(Integer id);
     Tasks findTaskById(Integer id);
 
 

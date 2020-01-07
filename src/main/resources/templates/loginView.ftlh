@@ -3,6 +3,9 @@
 <#macro content>
 <form method="post" action="/login/process">
 
+    <#if error?? >
+        <p> Ошибка в вводе логина или пароля</p>
+    </#if>
     <div>
         <label>
             Введите ваш логин:

@@ -2,6 +2,8 @@ package ru.dayplan.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,8 +34,9 @@ public class TaskController {
     private ClientsService clientsService;
 
     @GetMapping("/tasks")
-    public String taskView(Model model, @AuthenticationPrincipal Client activeClient){
+    public String taskView(Model model, @AuthenticationPrincipal Client activeClient, Authentication authentication)  {
         List<Tasks> tasks = clientsService.findTasksByClientsLogin(activeClient.getLogin());
+        model.addAttribute("isAuth", true);
         model.addAttribute("id", activeClient.getId());
         model.addAttribute("name", activeClient.getFirst_name());
         model.addAttribute("tasksList", tasks );
@@ -73,6 +76,7 @@ public class TaskController {
     public String oneTaskView(@PathVariable Integer id,
             @AuthenticationPrincipal Client activeClient, Model model) {
         if (activeClient != null) {
+            model.addAttribute("isAuth", true);
             model.addAttribute("id", activeClient.getId());
             model.addAttribute("name", activeClient.getFirst_name());
         }

@@ -57,7 +57,7 @@ public class TaskValidator implements Validator {
             if ((timeFirstTask < timeNewTask) & (timeSecondTask > timeNewTask) ) {
                 break;
             }
-            if (i == tasksList.size()-2) {
+            if (i == tasksList.size()-1) {
                 errors.rejectValue("time", "", "Вы тупо не успеете туда");
             }
         }

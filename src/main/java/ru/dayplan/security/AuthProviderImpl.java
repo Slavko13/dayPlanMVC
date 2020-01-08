@@ -45,8 +45,7 @@ public class AuthProviderImpl implements AuthenticationProvider {
         Date dateNow = new Date();
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd ' ' hh:mm:ss a");
         client.setLogInTime(formatForDateNow.format(dateNow));
-        clientService.updateClient(client);
-
+        clientService.updateClientLoginTime(client);
         return new UsernamePasswordAuthenticationToken(client, null, authorities);
     }
 

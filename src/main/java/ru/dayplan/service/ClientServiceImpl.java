@@ -33,8 +33,15 @@ public class ClientServiceImpl implements ClientsService {
     private HomeRepository homeRepository;
 
     @Override
-    public void updateClient(Client client) {
+    public Client updateClient(Client client) {
         clientRepository.save(client);
+        return client;
+    }
+
+    @Override
+    public Client updateClientLoginTime(Client client) {
+        clientRepository.save(client);
+        return client;
     }
 
     @Override

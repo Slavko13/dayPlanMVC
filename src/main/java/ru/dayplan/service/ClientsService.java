@@ -16,7 +16,8 @@ public interface ClientsService {
      Client findClientByLogin(String login);
      Set<Home> getHomesByClientsLogin(String login);
      String generateOriginalFIleName(String login);
-     void updateClient(Client client);
+     Client updateClient(Client client);
+     Client updateClientLoginTime(Client client);
      Client findClientByEmail(String email);
      Client findClientById(Integer id);
      List<Tasks> findTasksByClientsLogin(String login);

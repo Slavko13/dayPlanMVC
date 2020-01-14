@@ -2,14 +2,17 @@
 Данное приложение является планировщиком распорядка дня в будущем будет добавлена функция расчета пути и времени до адресса дневного задания.
 <h5>Требования к разработке</h5>
 <h6>Back-end</h6>
-- Java SpringMVC
-- Hibernate
-- PostgreSQL
+<ul> 
+  <li>Java SpringMVC</li>
+  <li> Hibernate </li>
+ <li> PostgreSQL </li>
+ </ul>
 <h6>Front-end</h6>
-- Freemarker
-- CSS
-- Java Scrpipt
-
+<ul> 
+  <li>Freemarker</li>
+  <li> CSS </li>
+ <li> JS </li>
+ </ul>
 <h6>Небольшое описание: </h6>
 Регистрация и логин осуществлена с помощью Spring-security, фронтэнд с помощью freemarker. 
 А само приложение с помощью spring-boot. Используется postgresql в качестве базы данных. И библиотека AspectJ для реализации логирования.

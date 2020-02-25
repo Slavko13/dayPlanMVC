@@ -26,6 +26,16 @@ public class Client {
     private Integer age;
     private String fileName;
 
+    public Client(String login, String first_name, String password, @Email String email) {
+        this.login = login;
+        this.first_name = first_name;
+        this.password = password;
+        this.email = email;
+    }
+
+
+    public Client() {
+    }
 
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private List<Tasks> tasksList = new ArrayList<>();

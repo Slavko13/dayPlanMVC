@@ -65,7 +65,7 @@ public class ClientServiceImpl implements ClientsService {
         Long millis = date.getTime();
         String fileName = millis.toString();
         Integer temp = clientLogin.hashCode();
-        fileName = fileName + temp.toString() + ".jpg";
+        fileName = fileName + temp.toString() + ".xlsx";
         return fileName;
 
     }

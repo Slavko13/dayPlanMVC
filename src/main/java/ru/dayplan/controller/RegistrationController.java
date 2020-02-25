@@ -29,7 +29,7 @@ public class RegistrationController {
     private ClientsService clientService;
 
 
-    @PostMapping("/registration")
+    @PostMapping("/registration/process")
     public String addClient(@ModelAttribute @Valid Client client,
                             BindingResult result, Model model) {
         clientValidator.validate(client, result);

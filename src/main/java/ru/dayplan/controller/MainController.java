@@ -78,6 +78,7 @@ public class MainController {
         if (activeClient != null) {
             model.addAttribute("id", activeClient.getId());
             model.addAttribute("name", activeClient.getFirst_name());
+            model.addAttribute("isAuth", true);
         }
         Client client = clientService.findClientByLogin(activeClient.getLogin());
         model.addAttribute("HomesTags", clientService.getHomesByClientsLogin(client.getLogin()));

@@ -1,7 +1,7 @@
 <#include "includers/main_template.ftlh">
 
 <#macro content>
-<form method="post" action="/registration">
+<form method="post" action="/registration/process">
 
 
 

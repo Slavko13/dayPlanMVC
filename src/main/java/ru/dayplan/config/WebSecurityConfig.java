@@ -30,10 +30,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/login", "/registration").anonymous()
                 .antMatchers("/id","/tasks", "/clients", "/tags", "/js/**").authenticated()
-                .and()
-                .formLogin()
                 .and().csrf().disable()
-                .exceptionHandling().accessDeniedPage("/home")
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/home")
+                .failureUrl("/login?error=true")
+                .loginProcessingUrl("/login/process")
+                .usernameParameter("login")
+                .and()
+                .exceptionHandling().accessDeniedPage("/")
                 .and().logout();
     }
 

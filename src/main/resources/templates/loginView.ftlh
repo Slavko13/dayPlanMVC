@@ -1,54 +1,51 @@
 <#include "includers/main_template.ftlh">
 
 <#macro content>
+
+
+    <div class="container" >
 <form method="post" action="/login/process">
 
     <#if error?? >
-        <p> Ошибка в вводе логина или пароля</p>
+        <div class="alert alert-danger" role="alert">
+            <p>Ошибка ввода логина или пароля</p>
+            </div>
     </#if>
-    <div>
-        <label>
-            Введите ваш логин:
-            <input type="text" name="login" />
-        </label>
+    <div class="form-group">
+        <label for="login">Логин:</label>
+        <input type="text" class="form-control" id="login" placeholder="Логин" name="login">
     </div>
-    <div>
-        <label>
-            Введите ваш пароль:
-            <input type="text" name="password" />
-        </label>
+
+    <div class="form-group">
+        <label for="password">Введите ваш пароль</label>
+        <input type="text" class="form-control" id="password" placeholder="Пароль" name="password">
     </div>
-    <input type="submit" value="Отправить" />
+    <input type="submit" value="Отправить" class="btn btn-primary" />
+    <p> Если ты у тебя нету логин, сделай  <a href="/registration">регистер</a></p>
+    <p id="recoverPass"> Или же ты мог забыть пароль,<a href="#"> то восстанови же его </a></p>
 </form>
-<p> Если ты у тебя нету логин, сделай  <a href="/registration">регистер</a></p>
-<p id="recoverPass"> Или же ты мог забыть пароль,<a href="#"> то восстанови же его </a></p>
+
 <div id="recoverForm" style="display: none">
     <form action="/recoverPass" method="get">
 
-    <div>
-        <label>
-            Введите ваш email:
-            <input type="text" name="email"/>
-        </label>
-    </div>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" class="form-control" id="password" placeholder="Пароль" name="email">
+        </div>
 
-        <div>
-            <label>
-                Введите ваш новый пароль:
-                <input type="text" name="password"/>
-            </label>
+        <div class="form-group">
+            <label for="password">Введите ваш новый пароль</label>
+            <input type="text" class="form-control" id="password" placeholder="Пароль" name="password">
         </div>
-        <div>
-            <label>
-                Подтвердите ваш новый пароль:
-                <input type="text" name="repeatPass"/>
-            </label>
+        <div class="form-group">
+            <label for="password">Повторите ваш пароль</label>
+            <input type="text" class="form-control" id="password" placeholder="Пароль" name="repeatPass">
         </div>
-        <input type="submit" value="Отправить форму"/>
+        <input class="btn btn-primary" type="submit" value="Восстановить"/>
     </form>
 
 </div>
-
+    </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
